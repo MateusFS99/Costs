@@ -10,6 +10,17 @@
       },
       "costs": 0,
       "services": []
+    },
+    {
+      "id": "94b7",
+      "name": "teste2",
+      "budget": "100",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "costs": 0,
+      "services": []
     }
   ],
   "categories": [

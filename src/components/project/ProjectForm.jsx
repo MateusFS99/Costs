@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { getAllCategories } from '../../services/categoriesService'
 
 import Input from '../form/Input'
 import Select from '../form/Select'
@@ -10,13 +11,7 @@ function ProjectForm({ projectData, handleSubmit }) {
   const [project, setProject] = useState(projectData || {})
 
   useEffect(() => {
-    fetch('http://localhost:5000/categories', {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
+    getAllCategories()
       .then((data) => setCategories(data))
       .catch((err) => console.log(err))
   }, [])

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { createProject } from '../services/projectsService'
 
 import ProjectForm from '../components/project/ProjectForm'
 
@@ -11,14 +12,7 @@ function NewProject() {
     project.costs = 0
     project.services = []
 
-    fetch('http://localhost:5000/projects', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(project),
-    })
-      .then((resp) => resp.json())
+    createProject(project)
       .then((data) => {
         navigate('/projects', { message: 'Projeto criado com sucesso!' })
       })
