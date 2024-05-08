@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "id": "ca4b",
+      "name": "aoba",
+      "budget": "156156",
+      "category": {
+        "id": "1",
+        "name": "Infraestrutura"
+      },
+      "costs": 0,
+      "services": []
+    },
+    {
+      "id": "94b7",
+      "name": "teste2",
+      "budget": "100",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "costs": 0,
+      "services": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infraestrutura"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Design"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    }
+  ]
+}
