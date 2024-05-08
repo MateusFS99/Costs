@@ -2,20 +2,19 @@
   padding: 1em;
   border: 1px solid #7a7a7a;
   border-radius: 5px;
-  width: 24%;
-  margin: 0.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 
   h4 {
     background-color: #222;
     color: #ffbb33;
     padding: 0.4em;
-    margin-bottom: 1.3em;
     font-size: 1.3em;
   }
 
   p {
     color: #7a7a7a;
-    margin-bottom: 1em;
 
     span {
       font-weight: bold;
@@ -25,6 +24,7 @@
   .categoryText {
     display: flex;
     align-items: center;
+    gap: 5px;
 
     span {
       display: block;
@@ -32,7 +32,6 @@
       height: 12px;
       border-radius: 50%;
       background-color: #ccc;
-      margin-right: 5px;
     }
 
     .infraestrutura {
@@ -53,9 +52,10 @@
   }
 
   .actions {
-    margin-top: 1.2em;
+    margin-top: 0.2em;
     display: flex;
     align-items: center;
+    gap: 1em;
 
     a,
     button {
@@ -64,13 +64,14 @@
       background-color: #fff;
       color: #222;
       font-size: 0.9em;
+      width: 100%;
       padding: 0.6em 1em;
       cursor: pointer;
-      margin-right: 1em;
       border: 1px solid #222;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 0.5em;
       transition: 0.5s;
     }
 
@@ -78,10 +79,6 @@
     button:hover {
       background-color: #222;
       color: #ffbb33;
-    }
-
-    svg {
-      margin-right: 0.5em;
     }
   }
 }
