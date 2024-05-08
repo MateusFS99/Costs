@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { getAllCategories } from '../../services/categoriesService'
+import { getAllCategories } from '../../../services/categoriesService'
 
-import Input from '../form/Input'
-import Select from '../form/Select'
-import SubmitButton from '../form/SubmitButton'
+import Input from '../../molecules/form/Input'
+import Select from '../../molecules/form/Select'
+import SubmitButton from '../../atoms/buttons/SubmitButton'
 import styles from './ProjectForm.module.css'
 
 function ProjectForm({ projectData, handleSubmit }) {
