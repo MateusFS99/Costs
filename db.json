@@ -21,6 +21,28 @@
       },
       "costs": 0,
       "services": []
+    },
+    {
+      "id": "cf40",
+      "name": "teste 3",
+      "budget": "1500",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "costs": 0,
+      "services": []
+    },
+    {
+      "id": "6181",
+      "name": "teste 4",
+      "budget": "50000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "costs": 0,
+      "services": []
     }
   ],
   "categories": [
