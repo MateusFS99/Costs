@@ -5,6 +5,7 @@ import AlertText from '../components/atoms/AlertText'
 import Container from '../components/templates/Container'
 import LinkButton from '../components/atoms/buttons/LinkButton'
 import ProjectCard from '../components/organisms/project/ProjectCard'
+import Loading from '../components/atoms/Loading'
 
 import styles from './Projects.module.css'
 
@@ -19,11 +20,17 @@ function Projects() {
   }
 
   const [projects, setProjects] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    getAllProjects()
-      .then((data) => setProjects(data))
-      .catch((err) => console.log(err))
+    setTimeout(() => {
+      getAllProjects()
+        .then((data) => {
+          setProjects(data)
+          setIsLoading(false)
+        })
+        .catch((err) => console.log(err))
+    }, 2000)
   }, [])
 
   return (
@@ -38,6 +45,10 @@ function Projects() {
           projects.map((project) => (
             <ProjectCard project={project} key={project.id} />
           ))}
+        {isLoading && <Loading />}
+        {!isLoading && projects.length === 0 && (
+          <p>Não há projetos cadastrados.</p>
+        )}
       </Container>
     </div>
   )
