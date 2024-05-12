@@ -9,18 +9,18 @@ import Loading from '../components/atoms/Loading'
 
 import styles from './Projects.module.css'
 
-import { getAllProjects } from '../services/projectsService'
+import { getAllProjects, removeProject } from '../services/projectsService'
 
 function Projects() {
-  const location = useLocation()
-  let message = ''
-
-  if (location.state) {
-    message = location.state.message
-  }
-
   const [projects, setProjects] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [message, setMessage] = useState('')
+
+  const location = useLocation()
+
+  if (location.state) {
+    setMessage(location.state.message)
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,6 +33,15 @@ function Projects() {
     }, 2000)
   }, [])
 
+  function onRemove(id) {
+    removeProject(id)
+      .then((data) => {
+        setProjects(projects.filter((project) => project.id !== id))
+        setMessage('Projeto removido com sucesso')
+      })
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className={styles.projectContainer}>
       <div className={styles.titleContainer}>
@@ -43,7 +52,11 @@ function Projects() {
       <Container customClass="start">
         {projects.length > 0 &&
           projects.map((project) => (
-            <ProjectCard project={project} key={project.id} />
+            <ProjectCard
+              project={project}
+              key={project.id}
+              handleRemove={onRemove}
+            />
           ))}
         {isLoading && <Loading />}
         {!isLoading && projects.length === 0 && (
