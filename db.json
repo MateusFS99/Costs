@@ -8,7 +8,7 @@
         "id": "1",
         "name": "Infraestrutura"
       },
-      "costs": 0,
+      "cost": 0,
       "services": []
     },
     {
@@ -19,7 +19,7 @@
         "id": "3",
         "name": "Design"
       },
-      "costs": 0,
+      "cost": 0,
       "services": []
     }
   ],

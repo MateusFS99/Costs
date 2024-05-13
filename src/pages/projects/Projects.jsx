@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import AlertText from '../components/atoms/AlertText'
-import Container from '../components/templates/Container'
-import LinkButton from '../components/atoms/buttons/LinkButton'
-import ProjectCard from '../components/organisms/project/ProjectCard'
-import Loading from '../components/atoms/Loading'
+import AlertText from '../../components/atoms/AlertText'
+import Container from '../../components/templates/Container'
+import LinkButton from '../../components/atoms/buttons/LinkButton'
+import ProjectCard from '../../components/organisms/project/ProjectCard'
+import Loading from '../../components/atoms/Loading'
 
 import styles from './Projects.module.css'
 
-import { getAllProjects, removeProject } from '../services/projectsService'
+import { getAllProjects, removeProject } from '../../services/projectsService'
 
 function Projects() {
   const [projects, setProjects] = useState([])

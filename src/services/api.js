@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:5000'
 
 export function get(url, id) {
-  return fetch(`${baseUrl}${url}${id ? '/id' : ''}`, {
+  return fetch(`${baseUrl}${url}${id ? `/${id}` : ''}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json',
