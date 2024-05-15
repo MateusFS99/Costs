@@ -4,15 +4,18 @@ import { useEffect, useState } from 'react'
 import Loading from '../../components/atoms/Loading'
 import ProjectForm from '../../components/organisms/project/ProjectForm'
 
-import { getProjectById } from '../../services/projectsService'
+import { getProjectById, alterProject } from '../../services/projectsService'
 
 import styles from './Project.module.css'
 import Container from '../../components/templates/Container'
+import AlertText from '../../components/atoms/AlertText'
 
 function Project() {
   const id = useParams().id
   const [project, setProject] = useState({})
   const [showForm, setShowForm] = useState(false)
+  const [message, setMessage] = useState()
+  const [messageType, setMessageType] = useState()
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,11 +31,28 @@ function Project() {
     setShowForm(!showForm)
   }
 
+  function alter(project) {
+    if (project.budget < project.cost) {
+      setMessage('O orçamento não pode ser menor que o custo do projeto!')
+      setMessageType('error')
+      return
+    }
+    alterProject(project)
+      .then((data) => {
+        setProject(data)
+        setShowForm(false)
+        setMessage('Projeto atualizado!')
+        setMessageType('success')
+      })
+      .catch((err) => console.log(err))
+  }
+
   return (
     <>
       {project.name ? (
         <div className={styles.project}>
           <Container customClass="column">
+            {message ?? <AlertText type={messageType} msg={message} />}
             <div className={styles.datails}>
               <h1>Projeto: {project.name}</h1>
               <button className={styles.btn} onClick={toggleProjectForm}>
@@ -55,7 +75,7 @@ function Project() {
                 </div>
               ) : (
                 <div className={styles.projectInfo}>
-                  <p>Project Form</p>
+                  <ProjectForm projectData={project} handleSubmit={alter} />
                 </div>
               )}
             </div>
