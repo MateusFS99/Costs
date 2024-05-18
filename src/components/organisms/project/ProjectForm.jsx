@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getAllCategories } from '../../../services/categoriesService'
 
 import Input from '../../molecules/form/Input'
 import Select from '../../molecules/form/Select'
 import SubmitButton from '../../atoms/buttons/SubmitButton'
 import styles from './ProjectForm.module.css'
+
+import { getAllCategories } from '../../../services/categoriesService'
 
 function ProjectForm({ projectData, handleSubmit }) {
   const [categories, setCategories] = useState([])
