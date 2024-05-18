@@ -19,6 +19,24 @@
         "id": "3",
         "name": "Design"
       },
+      "cost": 80,
+      "services": [
+        {
+          "name": "aoba",
+          "cost": "80",
+          "description": "fdaz ",
+          "id": "fcddd229-ff1b-4b15-945c-44a2a11299b2"
+        }
+      ]
+    },
+    {
+      "id": "95b8",
+      "name": "teste 4",
+      "budget": "156165",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
       "cost": 0,
       "services": []
     }

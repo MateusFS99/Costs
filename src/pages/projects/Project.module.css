@@ -2,8 +2,23 @@
   width: 100%;
   padding: 2em;
 
+  .btn {
+    background-color: #222;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+    max-height: 40px;
+    border: none;
+  }
+
+  .btn:hover {
+    color: #ffbb33;
+  }
+
   .datails,
-  .service {
+  .services {
     border-bottom: 1px solid #7a7a7a;
     margin-bottom: 1.2em;
     padding-bottom: 1.2em;
@@ -21,21 +36,6 @@
       background-color: #222;
       color: #ffbb33;
       padding: 0.4em;
-    }
-
-    .btn {
-      background-color: #222;
-      color: #fff;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      transition: 0.5s;
-      cursor: pointer;
-      max-height: 40px;
-      border: none;
-    }
-
-    .btn:hover {
-      color: #ffbb33;
     }
 
     .projectInfo {
