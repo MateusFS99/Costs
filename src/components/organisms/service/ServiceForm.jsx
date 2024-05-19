@@ -3,8 +3,6 @@ import { useState } from 'react'
 import Input from '../../molecules/form/Input'
 import SubmitButton from '../../atoms/buttons/SubmitButton'
 
-import styles from '../project/ProjectForm.module.css'
-
 function ServiceForm({ serviceData, projectData, handleSubmit }) {
   const [service, setService] = useState(serviceData || {})
 
@@ -19,7 +17,7 @@ function ServiceForm({ serviceData, projectData, handleSubmit }) {
   }
 
   return (
-    <form onSubmit={submitForm} className={styles.form}>
+    <form onSubmit={submitForm}>
       <Input
         name="name"
         type="text"

@@ -1,8 +1,6 @@
-import styles from './FormControl.module.css'
-
 function Select({ text, name, options, handleOnChange, value }) {
   return (
-    <div className={styles.formControl}>
+    <div className="formControl">
       <label htmlFor={name}>{text}</label>
       <select id={name} name={name} onChange={handleOnChange} value={value}>
         <option value="" disabled>

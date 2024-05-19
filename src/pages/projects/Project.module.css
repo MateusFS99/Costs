@@ -3,14 +3,14 @@
   padding: 2em;
 
   .btn {
+    padding: 0.5em 1em;
     background-color: #222;
     color: #fff;
-    padding: 0.5em 1em;
     text-decoration: none;
     transition: 0.5s;
     cursor: pointer;
     max-height: 40px;
-    border: none;
+    border-radius: 5px;
   }
 
   .btn:hover {
@@ -36,6 +36,7 @@
       background-color: #222;
       color: #ffbb33;
       padding: 0.4em;
+      border-radius: 5px;
     }
 
     .projectInfo {

@@ -1,8 +1,6 @@
-import styles from './FormControl.module.css'
-
 function Input({ type, text, name, placeholder, handleOnChange, value }) {
   return (
-    <div className={styles.formControl}>
+    <div className='formControl'>
       <label htmlFor={name}>{text}</label>
       <input
         type={type}
