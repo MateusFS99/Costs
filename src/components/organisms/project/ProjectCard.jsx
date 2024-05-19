@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
-
-import styles from './ProjectCard.module.css'
-
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
+
+import Card from '../../templates/Card'
 
 function ProjectCard({ project, handleRemove }) {
   const onRemove = (e) => {
@@ -11,26 +10,29 @@ function ProjectCard({ project, handleRemove }) {
   }
 
   return (
-    <div className={styles.projectCard}>
-      <h4>{project.name}</h4>
-      <p>
-        <span>Orçamento:</span> R${project.budget}
-      </p>
-      <p className={styles.categoryText}>
-        <span
-          className={`${styles[project.category.name.toLowerCase()]}`}
-        ></span>{' '}
-        {project.category.name}
-      </p>
-      <div className={styles.actions}>
-        <Link to={`/project/${project.id}`}>
-          <BsPencil /> Editar
-        </Link>
-        <button onClick={onRemove}>
-          <BsFillTrashFill /> Excluir
-        </button>
-      </div>
-    </div>
+    <Card
+      title={project.name}
+      content={
+        <>
+          <p>
+            <span>Orçamento:</span> R${project.budget}
+          </p>
+          <p>
+            <span>Categoria:</span> {project.category.name}
+          </p>
+        </>
+      }
+      actions={
+        <>
+          <Link to={`/project/${project.id}`}>
+            <BsPencil /> Editar
+          </Link>
+          <button onClick={onRemove}>
+            <BsFillTrashFill /> Excluir
+          </button>
+        </>
+      }
+    />
   )
 }
 

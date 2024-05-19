@@ -1,6 +1,6 @@
-import styles from '../project/ProjectCard.module.css'
-
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
+
+import Card from '../../templates/Card'
 
 function ServiceCard({ service, handleRemove }) {
   const onEdit = (e) => {
@@ -13,21 +13,27 @@ function ServiceCard({ service, handleRemove }) {
   }
 
   return (
-    <div className={styles.projectCard}>
-      <h4>{service.name}</h4>
-      <p>
-        <span>Custo Total:</span> R${service.cost}
-      </p>
-      <p>{service.description}</p>
-      <div className={styles.actions}>
-        <button onClick={onEdit}>
-          <BsPencil /> Editar
-        </button>
-        <button onClick={onRemove}>
-          <BsFillTrashFill /> Excluir
-        </button>
-      </div>
-    </div>
+    <Card
+      title={service.name}
+      content={
+        <>
+          <p>
+            <span>Custo Total:</span> R${service.cost}
+          </p>
+          <p>{service.description}</p>
+        </>
+      }
+      actions={
+        <>
+          <button onClick={onEdit}>
+            <BsPencil /> Editar
+          </button>
+          <button onClick={onRemove}>
+            <BsFillTrashFill /> Excluir
+          </button>
+        </>
+      }
+    />
   )
 }
 
