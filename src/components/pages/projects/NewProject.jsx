@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import { createProject } from '../../services/projectsService'
-
-import ProjectForm from '../../components/organisms/project/ProjectForm'
+import { createProject } from '../../../services/projectsService'
 
 import styles from './NewProject.module.css'
+
+import ProjectForm from '../../organisms/project/ProjectForm'
 
 function NewProject() {
   const navigate = useNavigate()

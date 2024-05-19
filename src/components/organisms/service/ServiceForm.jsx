@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-import Input from '../../molecules/form/Input'
 import SubmitButton from '../../atoms/buttons/SubmitButton'
+
+import Input from '../../molecules/form/Input'
 
 function ServiceForm({ serviceData, projectData, handleSubmit }) {
   const [service, setService] = useState(serviceData || {})

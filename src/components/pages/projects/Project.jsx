@@ -2,16 +2,16 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import Loading from '../../components/atoms/Loading'
-import ProjectForm from '../../components/organisms/project/ProjectForm'
-import ServiceForm from '../../components/organisms/service/ServiceForm'
-
-import { getProjectById, alterProject } from '../../services/projectsService'
-
 import styles from './Project.module.css'
-import Container from '../../components/templates/Container'
-import AlertText from '../../components/atoms/AlertText'
-import ServiceCard from '../../components/organisms/service/ServiceCard'
+
+import Loading from '../../atoms/Loading'
+import ProjectForm from '../../organisms/project/ProjectForm'
+import ServiceForm from '../../organisms/service/ServiceForm'
+import Container from '../../templates/Container'
+import AlertText from '../../atoms/AlertText'
+import ServiceCard from '../../organisms/service/ServiceCard'
+
+import { getProjectById, alterProject } from '../../../services/projectsService'
 
 function Project() {
   const id = useParams().id

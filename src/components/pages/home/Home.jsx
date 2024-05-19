@@ -1,7 +1,7 @@
 import styles from './Home.module.css'
 
-import savings from '../../images/savings.svg'
-import LinkButton from '../../components/atoms/buttons/LinkButton'
+import savings from '../../../images/savings.svg'
+import LinkButton from '../../atoms/buttons/LinkButton'
 
 function Home() {
   return (

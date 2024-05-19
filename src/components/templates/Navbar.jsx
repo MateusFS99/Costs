@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import Container from './Container'
-
 import styles from './Navbar.module.css'
+
 import logo from '../../images/costs_logo.png'
+
+import Container from './Container'
 
 function Navbar() {
   return (

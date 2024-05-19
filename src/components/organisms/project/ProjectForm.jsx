@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 
+import SubmitButton from '../../atoms/buttons/SubmitButton'
+
 import Input from '../../molecules/form/Input'
 import Select from '../../molecules/form/Select'
-import SubmitButton from '../../atoms/buttons/SubmitButton'
 
 import { getAllCategories } from '../../../services/categoriesService'
 
